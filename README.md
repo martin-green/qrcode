@@ -1,6 +1,7 @@
 # QR Code Generator
 
-A free, client-side QR code generator. No login, no server — everything runs entirely in your browser.
+A free, client-side QR code generator. No login, no server — everything runs entirely in your browser. Unlike many other sites on the Internet it requires no login, the qr-code does not go through another server it is a direct link.
+Access the page here: [https://martin-green.github.io/qrcode/](https://martin-green.github.io/qrcode/)
 
 ## Features
 
