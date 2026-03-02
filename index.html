@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 data-i18n="title">QR Code Generator</h1>
+      <div class="lang-switcher">
+        <button id="lang-en" class="lang-btn active" aria-label="English">EN</button>
+        <button id="lang-sv" class="lang-btn" aria-label="Svenska">SV</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="input-section">
+        <label for="url-input" data-i18n="urlLabel">Enter URL</label>
+        <input
+          type="url"
+          id="url-input"
+          placeholder="https://example.com"
+          autocomplete="url"
+          spellcheck="false"
+        >
+        <p id="url-error" class="error-msg" hidden data-i18n="urlError">Please enter a valid URL (must start with http:// or https://)</p>
+        <p class="hint" data-i18n="hint">💡 Tip: A shorter URL produces a smaller, easier-to-scan QR code.</p>
+
+        <div class="options-row">
+          <div class="option-group">
+            <label for="ec-level" data-i18n="ecLabel">Error Correction</label>
+            <select id="ec-level">
+              <option value="L">L – Low (7%)</option>
+              <option value="M" selected>M – Medium (15%)</option>
+              <option value="Q">Q – Quartile (25%)</option>
+              <option value="H">H – High (30%)</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="generate-btn" class="btn-primary" data-i18n="generate">Generate QR Code</button>
+      </div>
+
+      <div id="output-section" class="output-section" hidden>
+        <div id="qr-canvas" class="qr-canvas"></div>
+        <div class="download-row">
+          <button id="download-svg" class="btn-download" data-i18n="downloadSvg">Download SVG</button>
+          <button id="download-png" class="btn-download" data-i18n="downloadPng">Download PNG</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p data-i18n="footer">Free & open-source — runs entirely in your browser. No data is sent to any server.</p>
+    </footer>
+  </div>
+
+  <!-- QR Code library (Kazuhiko Arase, MIT) -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

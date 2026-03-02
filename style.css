@@ -1,0 +1,251 @@
+/* ── Reset & Base ─────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-bg: #f4f6f9;
+  --clr-surface: #ffffff;
+  --clr-primary: #2563eb;
+  --clr-primary-hover: #1d4ed8;
+  --clr-text: #1e293b;
+  --clr-text-muted: #64748b;
+  --clr-error: #dc2626;
+  --clr-border: #e2e8f0;
+  --radius: 10px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* ── Container ───────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 540px;
+}
+
+/* ── Header ──────────────────────────────────── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.lang-btn {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--clr-text-muted);
+  transition: all 0.15s ease;
+}
+
+.lang-btn.active {
+  background: var(--clr-primary);
+  color: #fff;
+  border-color: var(--clr-primary);
+}
+
+.lang-btn:hover:not(.active) {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+/* ── Input Section ───────────────────────────── */
+.input-section {
+  background: var(--clr-surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.input-section label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+#url-input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--clr-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.15s ease;
+  outline: none;
+}
+
+#url-input:focus {
+  border-color: var(--clr-primary);
+}
+
+#url-input.invalid {
+  border-color: var(--clr-error);
+}
+
+.error-msg {
+  color: var(--clr-error);
+  font-size: 0.82rem;
+  margin-top: 0.3rem;
+}
+
+.hint {
+  color: var(--clr-text-muted);
+  font-size: 0.82rem;
+  margin-top: 0.6rem;
+  line-height: 1.4;
+}
+
+/* ── Options Row ─────────────────────────────── */
+.options-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.option-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.option-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.option-group select {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border: 2px solid var(--clr-border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: var(--clr-surface);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.option-group select:focus {
+  border-color: var(--clr-primary);
+}
+
+/* ── Buttons ─────────────────────────────────── */
+.btn-primary {
+  display: block;
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: 0.75rem;
+  background: var(--clr-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--clr-primary-hover);
+}
+
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+/* ── Output Section ──────────────────────────── */
+.output-section {
+  background: var(--clr-surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.qr-canvas {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.qr-canvas svg {
+  width: 260px;
+  height: 260px;
+}
+
+.download-row {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btn-download {
+  padding: 0.55rem 1.2rem;
+  border: 2px solid var(--clr-primary);
+  background: transparent;
+  color: var(--clr-primary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-download:hover {
+  background: var(--clr-primary);
+  color: #fff;
+}
+
+/* ── Footer ──────────────────────────────────── */
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--clr-text-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .download-row {
+    flex-direction: column;
+  }
+
+  .btn-download {
+    width: 100%;
+  }
+}
